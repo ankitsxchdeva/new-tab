@@ -4,9 +4,9 @@ Currently hosted on ankitsxchdeva.github.io/new-tab
 
 ## Personalization
 Feel free to use this for your own use. You will need to change the following:
-- Location tag on weather script
+- Location tag on weather script (feel free to use my API key)
 - bookmarks
 
-## Useage
+## Usage
 - press space to enter search mode (currently google)
 - press esc to exit search mode
