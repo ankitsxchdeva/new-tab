@@ -1,34 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>New Tab</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
+    <div id="search">
+        <input id="search-field" type="text" name="search-field"/>
+    </div>
+    <div class="container">
+        <div id="clock"></div>
+        <div class="weather-container">
+            <div class="row">
+                <div id="weather-description"class="inline"></div>
+                <div class="inline">-</div>
+                <div id="temp" class="inline"></div>
+            </div>
+        </div>
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Finance</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://www.alliantcreditunion.org/" target="_blank">alliant</a>
+                    <a class="bookmark" href="https://connect.secure.wellsfargo.com/auth/logout" target="_blank">wells fargo</a>
+                    <a class="bookmark" href="https://secure07a.chase.com/web/auth/dashboard#/dashboard/overviewAccounts/overview/singleCard" target="_blank">chase</a>
+                    <a class="bookmark" href="https://www.discover.com/?ICMPGN=PUB_HDR_HOME" target="_blank">discover</a>
+                    <a class="bookmark" href="https://card.apple.com/" target="_blank">apple card</a>
+                    <a class="bookmark" href="https://dashboard.petalcard.com/login" target="_blank">petal card</a>
+                    <a class="bookmark" href="https://robinhood.com/" target="_blank">robinhood</a>
+                    <a class="bookmark" href="https://mint.intuit.com/overview.event" target="_blank">mint</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">School</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://docs.google.com/document/d/1svxg9NvdadUdJ-zTpohLj3tzNWsU2AwdZ-O-uqwlv2Y/edit" target="_blank">classes</a>
+                    <a class="bookmark" href="https://login.ucsc.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1" target="_blank">portal</a>
+                    <a class="bookmark" href="https://registrar.ucsc.edu/calendar/2021-22calendar-two-pages.pdf" target="_blank">calendar</a>
+                    <a class="bookmark" href="https://catalog.ucsc.edu/en/Current/General-Catalog/Academic-Units/Baskin-School-of-Engineering/Computer-Science-and-Engineering/Computer-Science-BS" target="_blank">requirements</a>
+                    <a class="bookmark" href="https://analytics.google.com/analytics/web/provision/?authuser=1#/provision" target="_blank">analytics</a>
+                    <a class="bookmark" href="https://courses.soe.ucsc.edu/courses/cse?year=2021" target="_blank">cse classes</a>
+                    <a class="bookmark" href="https://pisa.ucsc.edu/class_search/" target="_blank">class search</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Philosophy</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://foothillcollege.instructure.com/courses/17220" target="_blank">canvas</a>
+                    <a class="bookmark" href="https://bookshelf.vitalsource.com/#/books/601661A/cfi/9!/4/4@0.00:0.00" target="_blank">textbook</a>
+                    <a class="bookmark" href="https://quizlet.com/367017040/phil-4-quiz-questions-flash-cards/" target="_blank">flashcards</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="#">Finances</a>
-                <ul>
-                    <li><a href="https://www.alliantcreditunion.org/">Alliant</a></li>
-                    <li><a href="https://www.wellsfargo.com/">Wells Fargo</a></li>
-                    <li><a href="https://secure07a.chase.com/web/auth/dashboard#/dashboard/overviewAccounts/overview/singleCard">Chase Student Card</a></li>
-                    <li><a href="https://www.discover.com/?ICMPGN=PUB_HDR_HOME">Discover Student Card</a></li>
-                    <li><a href="https://card.apple.com/">Apple Card</a></li>
-                    <li><a href="https://dashboard.petalcard.com/app">Petal Card</a></li>
-                    <li><a href="https://robinhood.com/us/en/">Robinhood</a></li>
-                    <li><a href="https://mint.intuit.com/overview.event">Mint</a></li>
-                </ul>
-            </li>
-            <li><a href="#">School</a></li>
-            <li><a href="#">CSE 13</a></li>
-            <li><a href="#">AM 10</a></li>
-            <li><a href="#">MATH 23A</a></li>
-            <li><a href="#">CSE 170</a></li>
-            <li><a href="#">Jobs</a></li>
-        </ul>
-    </nav>
+    <script>
+        // Search on enter key event
+        document.getElementById("search-field").addEventListener("keydown",  event => { 
+            if (event.keyCode === 13) {
+                var val = document.getElementById("search-field").value;
+                window.open("https://google.com/search?q=" + val);
+            }
+        });
+        // Get current time and format
+        getTime = () => {
+            let date = new Date(),
+                min = date.getMinutes(),
+                hour = date.getHours();
 
+            return "" + 
+                (((hour < 10 ? ("0" + hour) : hour)+ 24) % 12 || 12) + ":" + 
+                (min < 10 ? ("0" + min) : min) 
+        }
+
+        window.onload = () => {
+            let xhr = new XMLHttpRequest();
+            // Request to open weather map
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=5392171&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.onload = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " F";
+                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                    } else {
+                        console.log('error msg: ' + xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
+
+        document.addEventListener("keydown", event => {
+            if (event.keyCode == 32) {          // Spacebar code to open search
+                document.getElementById('search').style.display = 'flex';
+                document.getElementById('search-field').focus();
+            } else if (event.keyCode == 27) {   // Esc to close search
+                document.getElementById('search-field').value = '';
+                document.getElementById('search-field').blur();
+                document.getElementById('search').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
