@@ -74,7 +74,7 @@
                 hour = date.getHours();
 
             return "" + 
-                (((hour < 10 ? ("0" + hour) : hour)+ 24) % 12 || 12) + ":" + 
+                ((hour + 24) % 12 || 12) + ":" + 
                 (min < 10 ? ("0" + min) : min) 
         }
 
