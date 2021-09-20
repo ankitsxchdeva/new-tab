@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
@@ -36,6 +36,7 @@
                     <a class="bookmark" href="https://mint.intuit.com/overview.event" target="_blank">mint</a>
                 </div>
             </div>
+
             <div class="bookmark-set">
                 <div class="bookmark-title">School</div>
                 <div class="bookmark-inner-container">
@@ -48,23 +49,30 @@
                     <a class="bookmark" href="https://pisa.ucsc.edu/class_search/" target="_blank">class search</a>
                 </div>
             </div>
+
             <div class="bookmark-set">
-                <div class="bookmark-title">Writing</div>
+                <div class="bookmark-title">CSE 150</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://canvas.ucsc.edu/courses/44625" target="_blank">canvas</a>
-                    <a class="bookmark" href="https://go.peerceptiv.com/viewStudentCourseInfo.jsp?course_id=5751" target="_blank">peerceptiv</a>
                     <a class="bookmark" href="https://www.notion.so/07a0e3a8707e49d393a0ba93d95be7e2?v=52a4cfc0ca2a4af3b4ff62cc4b642b1a" target="_blank">notion</a>
+                </div>
+            </div>
+
+            <div class="bookmark-set">
+                <div class="bookmark-title">CSE 120</div>
+
+                <div class="bookmark-inner-container">
 
                 </div>
             </div>
+
             <div class="bookmark-set">
-                <div class="bookmark-title">Languages</div>
-                <div class="bookmark-inner-container"> 
-                    <a class="bookmark" href="https://github.com/ankitsxchdeva" target="_blank">github</a>
-                    <a class="bookmark" href="https://docs.google.com/document/d/1nhDe--5Y0rdzSR4mA6WnrTE_gdJ6XvX_6aGFrfbezeo/edit" target="_blank">lang schedule</a>
-                    <a class="bookmark" href="https://canvas.ucsc.edu/courses/44713" target="_blank">lang canvas</a>
-                    <a class="bookmark" href="https://piazza.com/class/krfrj9ph34k71z" target="_blank">lang piazza</a>
-                    <a class="bookmark" href="https://canvas.ucsc.edu/courses/43977" target="_blank">cmpm canvas</a>
+                <div class="bookmark-title">CSE 101</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://canvas.ucsc.edu/courses/45883" target="_blank">canvas</a>
+                    <a class="bookmark" href="https://users.soe.ucsc.edu/~pang/101/f21/" target="_blank">website</a>
+                    <a class="bookmark" href="https://piazza.com/class/ktd6a2xp5yj4xd" target="_blank">piazza</a>
+
+
                 </div>
             </div>
         </div>
@@ -72,7 +80,7 @@
 
     <script>
         // Search on enter key event
-        document.getElementById("search-field").addEventListener("keydown",  event => { 
+        document.getElementById("search-field").addEventListener("keydown",  event => {
             if (event.keyCode === 13) {
                 var val = document.getElementById("search-field").value;
                 window.open("https://google.com/search?q=" + val);
@@ -84,9 +92,9 @@
                 min = date.getMinutes(),
                 hour = date.getHours();
 
-            return "" + 
-                ((hour + 24) % 12 || 12) + ":" + 
-                (min < 10 ? ("0" + min) : min) 
+            return "" +
+                ((hour + 24) % 12 || 12) + ":" +
+                (min < 10 ? ("0" + min) : min)
         }
 
         window.onload = () => {
