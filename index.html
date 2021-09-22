@@ -22,6 +22,7 @@
                 <div id="temp" class="inline"></div>
             </div>
         </div>
+
         <div class="bookmark-container">
             <div class="bookmark-set">
                 <div class="bookmark-title">Finance</div>
@@ -40,6 +41,8 @@
             <div class="bookmark-set">
                 <div class="bookmark-title">School</div>
                 <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://calendar.google.com/calendar/u/0/r/week" target="_blank">calendar</a>
+                    <a class="bookmark" href="https://www.notion.so/07a0e3a8707e49d393a0ba93d95be7e2?v=52a4cfc0ca2a4af3b4ff62cc4b642b1a" target="_blank">notion</a>
                     <a class="bookmark" href="https://docs.google.com/document/d/1svxg9NvdadUdJ-zTpohLj3tzNWsU2AwdZ-O-uqwlv2Y/edit" target="_blank">classes</a>
                     <a class="bookmark" href="https://my.ucsc.edu/" target="_blank">portal</a>
                     <a class="bookmark" href="https://registrar.ucsc.edu/calendar/2021-22calendar-two-pages.pdf" target="_blank">calendar</a>
@@ -51,30 +54,33 @@
             </div>
 
             <div class="bookmark-set">
-                <div class="bookmark-title">CSE 150</div>
-                <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://www.notion.so/07a0e3a8707e49d393a0ba93d95be7e2?v=52a4cfc0ca2a4af3b4ff62cc4b642b1a" target="_blank">notion</a>
-                </div>
-            </div>
-
-            <div class="bookmark-set">
-                <div class="bookmark-title">CSE 120</div>
-
-                <div class="bookmark-inner-container">
-
-                </div>
-            </div>
-
-            <div class="bookmark-set">
                 <div class="bookmark-title">CSE 101</div>
                 <div class="bookmark-inner-container">
                     <a class="bookmark" href="https://canvas.ucsc.edu/courses/45883" target="_blank">canvas</a>
                     <a class="bookmark" href="https://users.soe.ucsc.edu/~pang/101/f21/" target="_blank">website</a>
                     <a class="bookmark" href="https://piazza.com/class/ktd6a2xp5yj4xd" target="_blank">piazza</a>
+                </div>
+            </div>
+
+            <div class="bookmark-set">
+                <div class="bookmark-title">CSE 120</div>
+                <div class="bookmark-inner-container">
+                  <a class="bookmark" href="https://canvas.ucsc.edu/courses/46802" target="_blank">canvas</a>
+
 
 
                 </div>
             </div>
+
+            <div class="bookmark-set">
+                <div class="bookmark-title">CSE 150</div>
+                <div class="bookmark-inner-container">
+                  <a class="bookmark" href="https://canvas.ucsc.edu/courses/46807" target="_blank">canvas</a>
+
+
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -100,7 +106,7 @@
         window.onload = () => {
             let xhr = new XMLHttpRequest();
             // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=5392171&units=imperial&appid=44c9f50e295f8a812f54e3683316132e');
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=5393052&units=imperial&appid=44c9f50e295f8a812f54e3683316132e');
             xhr.onload = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
