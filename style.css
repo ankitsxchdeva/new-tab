@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #282c34;
+    background-color: #2e3440;
     margin: 0px;
 }
 
@@ -25,14 +25,14 @@ body {
     font-family: sf-apple;
     font-size: 4.0rem;
     letter-spacing: 0.3rem;
-    color: #fff;
+    color: #8fbcbb;
     margin-bottom: .25em;
 }
 
 #search {
     width: 100%;
     height: 100vh;
-    background-color: #000000;
+    background-color: #3b4252;
     display: none;
     position: absolute;
     box-sizing: border-box;
@@ -45,11 +45,11 @@ body {
     width: 90%;
     padding: .75em 1em;
     box-sizing: border-box;
-    background-color: #000000;
-    border: solid 0px #000000;
+    background-color: #434c5e;
+    border: solid 0px #3b4252;
     font-family: sf-apple;
     font-size: 4rem;
-    color: #f2f2f2;
+    color: #e5e9f0;
     outline: none;
     border-radius: 3px;
     margin-bottom: 1em;
@@ -58,12 +58,12 @@ body {
 
 .weather-container {
     width: 30%;
-    background-color: #000000;
+    background-color: #434c5e;
     padding: 1em;
     border-radius: 3px;
     font-family: "Roboto Mono";
     font-size: 1.2rem;
-    color: #fff;
+    color: #88c0d0;
     text-align: center;
 }
 .inline {
@@ -97,7 +97,7 @@ body {
 
 .bookmark-set{
     padding: 1em;
-    background-color: #000000;
+    background-color: #3b4252;
     border-radius: 3px;
     font-family: "Roboto Mono";
     font-size: .85rem;
@@ -114,15 +114,15 @@ body {
     font-family: "Roboto";
     font-size: 1.2rem;
     font-weight: 600;
-    color: #ededed;
+    color: #81a1c1;
     margin: 0em 0em .35em 0em;
 }
 .bookmark {
     text-decoration: none;
-    color: #8c8c8b;
+    color: #5e81ac;
     display:block;
     margin: .4em 0em;
 }
 .bookmark:hover {
-    color: #fff;
+    color: #d8dee9;
 }
