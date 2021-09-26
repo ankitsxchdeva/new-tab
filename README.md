@@ -1,3 +1,5 @@
+NOW FEATURING NORD THEME 9/25/2021
+
 # new-tab
 This is a very simple html/css landing page to serve as my new tab.
 Currently hosted at ankitsachdeva.com/new-tab
