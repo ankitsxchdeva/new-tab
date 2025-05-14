@@ -103,7 +103,7 @@
         window.onload = () => {
             let xhr = new XMLHttpRequest();
             // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=5393052&units=imperial&appid=44c9f50e295f8a812f54e3683316132e');
+            xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?id=4671654&units=imperial&appid=44c9f50e295f8a812f54e3683316132e');
             xhr.onload = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
@@ -111,10 +111,22 @@
                         console.log(json);
                         document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + "°";
                         document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                        // Add city name display
+                        let cityName = document.createElement('div');
+                        cityName.className = 'city-name';
+                        cityName.innerHTML = `${json.name}, TX`;
+                        document.querySelector('.weather-container').appendChild(cityName);
                     } else {
-                        console.log('error msg: ' + xhr.status);
+                        console.error('Weather API Error:', xhr.status);
+                        document.getElementById("temp").innerHTML = "N/A";
+                        document.getElementById("weather-description").innerHTML = "Weather unavailable";
                     }
                 }
+            }
+            xhr.onerror = () => {
+                console.error('Weather API Request Failed');
+                document.getElementById("temp").innerHTML = "N/A";
+                document.getElementById("weather-description").innerHTML = "Weather unavailable";
             }
             xhr.send();
             // Set up the clock

@@ -126,3 +126,11 @@ body {
 .bookmark:hover {
     color: #d8dee9;
 }
+
+.city-name {
+    font-family: "Roboto Mono";
+    font-size: 0.9rem;
+    color: #88c0d0;
+    margin-top: 5px;
+    text-align: center;
+}
